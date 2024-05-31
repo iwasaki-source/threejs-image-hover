@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/layout.astro";
+import Detail from "../../components/detail.astro";
+
+const pageTitle = 'gooey effect'
+---
+
+<Layout pageTitle={pageTitle}>
+  <Detail>
+    <img
+    src="https://picsum.photos/id/37/600/900"
+    data-hover="https://picsum.photos/id/38/600/900"
+    data-effect="gooey"
+    alt=""
+    class="tile__image">
+  </Detail>
+  <script type="module" src="../../../src/js/script.js"></script>
+</Layout>
+
+<style>
+.tile__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+</style>
