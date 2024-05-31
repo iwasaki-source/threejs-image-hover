@@ -1,16 +1,56 @@
 ---
-
+import Layout from "../layouts/layout.astro"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <div class="container">
+    <h1 class="title">Three.js Hover Effect Demo</h1>
+    <div class="grid">
+      <a href="/gooey" class="tile__figure">
+        <img
+        src="https://picsum.photos/id/37/600/900"
+        data-hover="https://picsum.photos/id/38/600/900"
+        data-effect="gooey"
+        alt=""
+        class="tile__image">
+      </a>
+      <a href="/gooey" class="tile__figure">
+        <img
+        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+        data-hover="https://images.unsplash.com/photo-1522609925277-66fea332c575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+        data-effect="gooey"
+        alt=""
+        class="tile__image">
+      </a>
+    </div>
+  </div>
+  <canvas id="stage"></canvas>
+  <script type="module" src="../../src/js/script.js"></script>
+</Layout>
+
+<style>
+  .container {
+    height: 100vh;
+    padding-inline: 32px
+  }
+  .title {
+    text-align: center;
+    padding: 32px 0 40px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+  }
+  img {
+    width: 100%;
+  }
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+</style>
