@@ -9,9 +9,13 @@ const { pageTitle } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
-    <script type="module" src="/src/js/script.js" defer></script>
+    <!-- <script type="module" src="/src/js/script.js" defer></script> -->
 	</head>
   <body>
     <slot />
   </body>
 </html>
+
+<script>
+  import '/src/js/script.js';
+</script>
